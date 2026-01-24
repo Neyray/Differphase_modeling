@@ -21,6 +21,9 @@ def run():
     # 2. 无回补 (Control): k_rev = 0
     sol_no_rev = odeint(model_differphase, y0, p.t_span, args=(0.0,))
     
+
+
+
     # === 导出数据到CSV ===
     # 构建data目录路径
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -59,6 +62,11 @@ def run():
     print(f"✅ 数据已导出:")
     print(f"   - {os.path.join(data_dir, 'stability_with_reversion.csv')}")
     print(f"   - {os.path.join(data_dir, 'stability_no_reversion.csv')}")
+    
+
+
+
+
     
     # === 绘图：细胞比例堆叠图 (展示种群动态) ===
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))

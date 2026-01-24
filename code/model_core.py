@@ -32,6 +32,9 @@ def model_differphase(y, t, k_rev_dynamic):
     
     return [dN_S, dN_B, dN_P, dYield]
 
+
+
+
 def model_monoculture(y, t):
     """
     对照组: 传统单菌发酵模型

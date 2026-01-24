@@ -15,6 +15,9 @@ def run():
     y0_dol = [1e7, 0, 0, 0] # Differphase: 接种干细胞
     y0_mono = [1e7, 0]      # Monoculture: 接种普通菌
     
+
+
+
     # === 运行模拟 ===
     # 1. DOL 系统
     sol_dol = odeint(model_differphase, y0_dol, p.t_span, args=(p.k_rev_base,))
@@ -23,6 +26,11 @@ def run():
     # 2. 单菌系统
     sol_mono = odeint(model_monoculture, y0_mono, p.t_span)
     yield_mono = sol_mono[:, 1] # 第2列是产量
+    
+
+
+
+
     
     # === 导出数据到CSV ===
     # 构建data目录路径
@@ -68,6 +76,11 @@ def run():
     print(f"✅ 汇总指标已导出: {summary_path}")
     print(f"   产量提升: {increase:.1f}%")
     
+
+
+
+
+
     # === 绘图：产量累计曲线 ===
     fig, ax = plt.subplots(figsize=(10, 6))
     
